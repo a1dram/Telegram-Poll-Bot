@@ -4,7 +4,8 @@ import schedule
 import asyncio
 import aioschedule
 import logging
-
+import datetime
+from datetime import datetime
 from aiogram import Bot, Dispatcher, executor, types
 
 logging.basicConfig(level=logging.INFO)
@@ -16,13 +17,16 @@ dp = Dispatcher(bot)
 
 
 @dp.message_handler()
-async def poll():
-    await bot.send_poll('-716217845', 'Присутствие на работе', ['Работаю', 'Больничный', 'Отпуск / отгул'],
-                        is_anonymous=False, is_closed=False)
+async def choose_your_dinner():
+    date = datetime.today().isoweekday()
+
+    if date != 6 and date != 7:
+        await bot.send_poll('-1001522185836', 'Присутствие на работе', ['Работаю', 'Больничный', 'Отпуск, отгул'],
+                            is_anonymous=False, is_closed=False)
 
 
 async def scheduler():
-    aioschedule.every().day.at("12:50").do(poll)
+    aioschedule.every().day.at('09:00').do(choose_your_dinner)
 
     while True:
         await aioschedule.run_pending()
