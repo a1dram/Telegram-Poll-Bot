@@ -10,7 +10,7 @@ from aiogram import Bot, Dispatcher, executor, types
 
 logging.basicConfig(level=logging.INFO)
 
-TOKEN = "5648224518:AAG7Anqgd1LmsTaf3Z8NTx7ByuSQ8CfLOVs"
+TOKEN = "BOT'S TOKEN"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
@@ -20,8 +20,8 @@ dp = Dispatcher(bot)
 async def choose_your_dinner():
     date = datetime.today().isoweekday()
 
-    if date != 6 and date != 7:
-        await bot.send_poll('-1001522185836', 'Присутствие на работе', ['Работаю', 'Больничный', 'Отпуск, отгул'],
+    if date not in [6, 7]:
+        await bot.send_poll('GROUP CHAT ID', 'Presence at work', ['Working', 'On sick leave', 'Vacation'],
                             is_anonymous=False, is_closed=False)
 
 
