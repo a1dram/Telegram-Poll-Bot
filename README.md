@@ -1,1 +1,1 @@
-Телеграм бот, который раз в день в указанное время присылает опрос в группу телеграма
+A telegram bot that sends a survey to the group once a day at a specified time
