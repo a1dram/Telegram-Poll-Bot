@@ -1,10 +1,9 @@
 import time
-from datetime import datetime
-import schedule
 import asyncio
 import aioschedule
 import logging
 import datetime
+
 from datetime import datetime
 from aiogram import Bot, Dispatcher, executor, types
 
