@@ -1,1 +1,1 @@
-A telegram bot that sends a survey to the group once a day at a specified time
+A telegram bot that sends a poll to the group once a day at a specified time
